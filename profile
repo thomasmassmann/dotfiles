@@ -3,6 +3,9 @@
 # Ensure user-installed binaries take precedence.
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 # Locale settings.
 export LC_ALL=de_DE.UTF-8
 export LANG=de_DE.UTF-8
