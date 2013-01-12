@@ -5,6 +5,9 @@ if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
 fi
 
+# Set the default editor to vim.
+export EDITOR=vim
+
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
