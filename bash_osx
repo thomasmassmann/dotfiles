@@ -12,3 +12,8 @@ fi
 if [ -d /usr/local/share/python3 ]; then
     export PATH=/usr/local/share/python3:$PATH
 fi
+
+# Enable homebrew bash completion.
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
