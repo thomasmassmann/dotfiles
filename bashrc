@@ -26,3 +26,8 @@ PROMPT_COMMAND='history -a'
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
+
+# Enable Max OS X specific features.
+if [ `uname` == 'Darwin' ] && [ -f ~/.bash_osx ]; then
+    source ~/.bash_osx
+fi
