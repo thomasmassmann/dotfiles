@@ -17,3 +17,8 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+# Add LaTeX, if it exists.
+if [ -d /usr/texbin ]; then
+    export PATH=$PATH:/usr/texbin
+fi
