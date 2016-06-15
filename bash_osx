@@ -1,7 +1,7 @@
 # Max OS X specific features.
 
 # Set architecture flags.
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64 -Wno-error=unused-command-line-argument-hard-error-in-future"
 
 # Add local (homebrew) python 2.7.x, if it exists.
 if [ -d /usr/local/share/python ]; then
@@ -16,6 +16,18 @@ fi
 # Enable homebrew bash completion.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
+fi
+
+# Git bash completion
+GIT_COMPLETION=
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
+    . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    GIT_COMPLETION=true
+fi
+
+# Mercurial bash completion
+if [ -f $HOME/projects/hg-stable/contrib/bash_completion ]; then
+    . $HOME/projects/hg-stable/contrib/bash_completion
 fi
 
 # Add LaTeX, if it exists.
