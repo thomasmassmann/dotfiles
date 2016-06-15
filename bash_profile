@@ -5,3 +5,8 @@ test -f ~/.profile && source ~/.profile
 
 # Load .bashrc, containing non-login related bash initializations.
 test -f ~/.bashrc && source ~/.bashrc
+
+test -f ~/.apikeys/include.sh && source ~/.apikeys/include.sh
+
+
+test -f /Volumes/Work/Configurations/Customers/propertyshelf.sh  && source /Volumes/Work/Configurations/Customers/propertyshelf.sh
