@@ -17,7 +17,7 @@ shopt -s histappend
 
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
-PROMPT_COMMAND='history -a'
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -31,3 +31,6 @@ fi
 if [ `uname` == 'Darwin' ] && [ -f ~/.bash_osx ]; then
     source ~/.bash_osx
 fi
+
+# added by travis gem
+source /Users/thomas/.travis/travis.sh
