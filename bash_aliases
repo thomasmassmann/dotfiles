@@ -16,3 +16,7 @@ alias l='ls -CFh'
 alias grep='grep --color=auto --exclude-dir=\.svn --exclude-dir=\.hg --exclude-dir=\.git'
 alias fgrep='fgrep --color=auto --exclude-dir=\.svn --exclude-dir=\.hg --exclude-dir=\.git'
 alias egrep='egrep --color=auto --exclude-dir=\.svn --exclude-dir=\.hg --exclude-dir=\.git'
+
+alias devpi-ctl='/Users/thomas/venvs/devpi/bin/devpi-ctl'
+alias devpi='/Users/thomas/venvs/devpi/bin/devpi'
+
