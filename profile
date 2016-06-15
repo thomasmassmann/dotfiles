@@ -40,14 +40,14 @@ export VIRTUALENV_DISTRIBUTE=true
 # Centralized location for new virtual environments.
 export PIP_VIRTUALENV_BASE=$HOME/venvs
 # pip should only run if there is a virtualenv currently activated.
-export PIP_REQUIRE_VIRTUALENV=true
+#export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading.
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # Allow pip to system.
-syspip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
+#syspip(){
+#   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+#}
 
 function tabname {
   printf "\e]1;$1\a"
