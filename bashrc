@@ -33,4 +33,6 @@ if [ `uname` == 'Darwin' ] && [ -f ~/.bash_osx ]; then
 fi
 
 # added by travis gem
-source /Users/thomas/.travis/travis.sh
+if [ -f ~/.travis/travis.sh ]; then
+    source ~/.travis/travis.sh
+fi
