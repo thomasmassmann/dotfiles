@@ -4,9 +4,9 @@
 export ARCHFLAGS="-arch x86_64 -Wno-error=unused-command-line-argument-hard-error-in-future"
 
 # Add local (homebrew) python 2.7.x, if it exists.
-if [ -d /usr/local/share/python ]; then
-    export PATH=/usr/local/share/python:$PATH
-fi
+#if [ -d /usr/local/share/python ]; then
+#    export PATH=/usr/local/share/python:$PATH
+#fi
 
 # Add local (homebrew) python 3.3.x, if it exists.
 if [ -d /usr/local/share/python3 ]; then

@@ -12,3 +12,5 @@ test -f ~/.apikeys/include.sh && source ~/.apikeys/include.sh
 test -f /Volumes/Work/Configurations/Customers/propertyshelf.sh  && source /Volumes/Work/Configurations/Customers/propertyshelf.sh
 
 test -f ~/.ansible_rc && source ~/.ansible_rc
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
