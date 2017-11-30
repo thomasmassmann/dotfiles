@@ -9,10 +9,11 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # Locale settings.
 export LC_ALL=de_DE.UTF-8
 export LANG=de_DE.UTF-8
+GIT_PS1_SHOWDIRTYSTATE=true
 
 # Customize command prompt with current git or mercurial branch.
 my_vcprompt() {
-  hg prompt $'\e[00mon \e[31m{hg:{branch}}{status} {at {bookmark}}' 2> /dev/null
+  # hg prompt $'\e[00mon \e[31m{hg:{branch}}{status} {at {bookmark}}' 2> /dev/null
   if [ -n "${GIT_COMPLETION}" ]; then
     __git_ps1 '\e[00mon \e[31mgit:%s'
   fi
