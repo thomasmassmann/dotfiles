@@ -1,20 +1,3 @@
-# Activate virtualenvwrapper, if it exists.
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  # virtualenv should use Distribute instead of legacy setuptools.
-  export VIRTUALENV_DISTRIBUTE=true
-  # Centralized location for new virtual environments.
-  export PIP_VIRTUALENV_BASE=$HOME/venvs
-  # pip should only run if there is a virtualenv currently activated.
-  #export PIP_REQUIRE_VIRTUALENV=true
-  # cache pip-installed packages to avoid re-downloading.
-  export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
-  export WORKON_HOME=/Volumes/Work/Frameworks/Python/venvs
-  export PROJECT_HOME=/Volumes/Work/Frameworks/Python/projects
-
-fi
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
@@ -74,7 +57,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenvwrapper)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,7 +105,7 @@ test -f /Volumes/Work/Configurations/Customers/propertyshelf.sh  && source /Volu
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Initialize 'direnv'.
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # Enable autocompletion for 'pipenv'.
 eval "`pipenv --completion`"
