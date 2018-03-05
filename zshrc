@@ -2,6 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
+export LC_ALL=de_DE.UTF-8
+export LANG=de_DE.UTF-8
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/thomas/.oh-my-zsh
