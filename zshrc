@@ -2,9 +2,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
-export LC_ALL=de_DE.UTF-8
-export LANG=de_DE.UTF-8
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/thomas/.oh-my-zsh
 
@@ -68,14 +65,15 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+    export EDITOR='subl -n -w'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
