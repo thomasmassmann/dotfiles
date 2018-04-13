@@ -112,3 +112,9 @@ eval "`pipenv --completion`"
 
 # Add TeXLive to PATH for Latex support.
 export PATH="$PATH:/Library/TeX/texbin"
+
+###-tns-completion-start-###
+if [ -f /Users/thomas/.tnsrc ]; then 
+    source /Users/thomas/.tnsrc 
+fi
+###-tns-completion-end-###
