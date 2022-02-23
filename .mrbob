@@ -1,0 +1,22 @@
+[mr.bob]
+verbose = False
+
+[variables]
+# all variables answered here, will not being ask again:
+
+author.name = Thomas Massmann
+author.email = thomas.massmann@it-spir.it
+author.github.user = thomasmassmann
+package.venv.disabled = y
+package.git.disabled = y
+
+[defaults]
+# set your default values for questions here, they questions are still being ask
+# but with your defaults:
+
+plone.version = 5.2.7
+# dexterity_type_global_allow = n
+# dexterity_type_filter_content_types = y
+# dexterity_type_activate_default_behaviors = n
+# dexterity_type_supermodel = y
+# python.version = python3.7
