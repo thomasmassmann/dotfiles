@@ -174,6 +174,9 @@ chflags nohidden ~/Library
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 45
 
+# Enable dock magnification
+defaults write com.apple.dock magnification -bool true
+
 # Hide recent used apps
 defaults write com.apple.dock show-recents -bool false
 
