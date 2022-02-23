@@ -1,17 +1,27 @@
+#
+# .zshrc
+#
+# @author Thomas Massmann
+#
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/thomas/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools"
+export ANDROID_HOME="/usr/local/share/android-sdk"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export PATH="$PATH:/usr/local/share/android-sdk/platform-tools:/usr/local/share/android-sdk/tools"
 
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
+
+export HOMEBREW_NO_ANALYTICS=1
+# export HOMEBREW_UPGRADE_CLEANUP=1
 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -65,7 +75,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-completions thefuck)
+plugins=(git zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,7 +91,7 @@ export LC_ALL=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-    export EDITOR='subl -n -w'
+    export EDITOR='code'
 fi
 
 # Compilation flags
@@ -99,31 +109,45 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
 autoload -Uz bashcompinit && bashcompinit -i
 
-test -f ~/.apikeys/include.sh && source ~/.apikeys/include.sh
-
-
-test -f /Volumes/Work/Configurations/Customers/propertyshelf.sh  && source /Volumes/Work/Configurations/Customers/propertyshelf.sh
-
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 # Initialize 'direnv'.
 # eval "$(direnv hook zsh)"
 
-# Enable autocompletion for 'pipenv'.
-eval "`pipenv --completion`"
+eval "$(grunt --completion=zsh)"
 
 # Add TeXLive to PATH for Latex support.
 export PATH="$PATH:/Library/TeX/texbin"
 
-###-tns-completion-start-###
-if [ -f /Users/thomas/.tnsrc ]; then 
-    source /Users/thomas/.tnsrc 
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '~/.netlify/helper/path.zsh.inc' ]; then source '~/.netlify/helper/path.zsh.inc'; fi
+
+# For OpenFaaS CLI
+# export OPENFAAS_PREFIX="tmassman"
+# export OPENFAAS_URL="http://127.0.0.1:8080"
+
+# pyenv Configuration
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
 fi
-###-tns-completion-end-###
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
+PATH=$(pyenv root)/shims:$PATH
