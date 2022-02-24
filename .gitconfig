@@ -1,44 +1,51 @@
 [alias]
-  c = commit
-  ca = commit -a
-  cam = commit -am
-  ci = commit
-  cm = commit -m
-  d = diff
-  dc = diff --cached
-  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
-  st = status
+	c = commit
+	ca = commit -a
+	cam = commit -am
+	ci = commit
+	cm = commit -m
+	d = diff
+	dc = diff --cached
+	l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+	st = status
 [color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 [commit]
-  gpgsign = true
+	gpgsign = true
+	template = ~/.stCommitMsg
 [core]
-  autocrlf = input
-  editor = vi
-  excludesfile = ~/.gitignore
+	autocrlf = input
+	editor = vi
+	excludesfile = ~/.gitignore
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [difftool]
-  prompt = false
+	prompt = false
 [gpg]
-  program = /usr/local/bin/gpg
+	program = /usr/local/bin/gpg
 # This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
 [include]
-  path = /Users/thomas/.netlify/helper/git-config
+	path = ~/.netlify/helper/git-config
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [merge]
-  tool = kdiff3
+	tool = kdiff3
 [pull]
-  rebase = true
+	rebase = true
 [push]
-  default = simple
+	default = simple
 [user]
-  email = thomas.massmann@it-spir.it
-  name = Thomas Massmann
-  signingkey = D828975ADB26AD54E25D3E698E75FDDD23969C8C
+	email = thomas.massmann@it-spir.it
+	name = Thomas Massmann
+	signingkey = D828975ADB26AD54E25D3E698E75FDDD23969C8C
 [web]
-  browser = firefox-nightly
+	browser = firefox-nightly
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
